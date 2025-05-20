@@ -9,6 +9,7 @@ return array(
     'WebDriver' => array($vendorDir . '/instaclick/php-webdriver/lib'),
     'SM' => array($vendorDir . '/winzou/state-machine/src'),
     'PhpSpec' => array($vendorDir . '/phpspec/phpspec/src'),
+    'Payplug\\' => array($vendorDir . '/payplug/payplug-php/lib'),
     'LSS' => array($vendorDir . '/openlss/lib-array2xml'),
     'JsonpCallbackValidator' => array($vendorDir . '/willdurand/jsonp-callback-validator/src'),
     'HTMLPurifier' => array($vendorDir . '/ezyang/htmlpurifier/library'),

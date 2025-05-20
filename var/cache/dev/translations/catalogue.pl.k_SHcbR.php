@@ -500,6 +500,17 @@ $catalogue = new MessageCatalogue('pl', array (
     'sylius.resource.race_condition_error' => 'Nie można uaktualnić, %resource% został już wcześniej zmodyfikowany.',
     'sylius.resource.something_went_wrong_error' => 'Coś poszło nie tak, spróbuj ponownie.',
     'sylius.product_variant.cannot_generate_variants' => 'Nie można wygenerować wariantów produktu bez wartości opcji.',
+    'sylius_refund.at_least_one_unit_should_be_selected_to_refund' => 'Co najmniej jeden produkt powinien by wybrany do zwrotu',
+    'sylius_refund.error_occurred' => 'Pojawił się nieoczekiwany błąd',
+    'sylius_refund.free_order_should_not_be_refund' => 'Nie możesz zrefundować darmowego zamówienia',
+    'sylius_refund.order_should_be_paid' => 'Zamówienie powinno zostać opłacone, aby środki mogły zostać zwrócone',
+    'sylius_refund.refund_amount_must_be_greater' => 'Refundowana kwota musi być większa od 0',
+    'sylius_refund.refund_amount_must_be_less' => 'Nie możesz zwrócić kwoty większej niż całkowita kwota zamówienia',
+    'sylius_refund.refund_payment_completed' => 'Zwrot środków został pomyślnie zakończony',
+    'sylius_refund.resend_credit_memo_failed' => 'Ponowne wysłanie noty kredytowej nie powiodło się',
+    'sylius_refund.resend_credit_memo_success' => 'Wybrana nota kredytowa została pomyślnie wysłana ponownie',
+    'sylius_refund.unit_refund_exceeded' => 'Nie możesz zwrócić kwoty większej niż całkowita kwota zamówienia',
+    'sylius_refund.units_successfully_refunded' => 'Zwrot środków za wybrane produkty zamówienia został pomyślnie zrealizowany',
   ),
   'messages' => 
   array (
@@ -1925,6 +1936,39 @@ $catalogue = new MessageCatalogue('pl', array (
     'sylius.menu.shop.account.header' => 'Twoje Konto',
     'sylius.menu.shop.account.order_history' => 'Historia zamówień',
     'sylius.menu.shop.account.personal_information' => 'Dane osobowe',
+    'sylius_refund.ui.buyer' => 'Klient',
+    'sylius_refund.ui.clear_refunds' => 'Wyczyść wszystko',
+    'sylius_refund.ui.new' => 'Nowy',
+    'sylius_refund.ui.completed' => 'Zakończony',
+    'sylius_refund.ui.credit_memo' => 'Nota kredytowa',
+    'sylius_refund.ui.credit_memos' => 'Noty kredytowe',
+    'sylius_refund.ui.download' => 'Pobierz',
+    'sylius_refund.ui.gross_value' => 'Wartość brutto',
+    'sylius_refund.ui.issued_at' => 'Wystawiono',
+    'sylius_refund.ui.issued_for_order' => 'Wystawiono dla zamówienia',
+    'sylius_refund.ui.issued_from' => 'Wydane od',
+    'sylius_refund.ui.manage_credit_memos' => 'Zarządzaj notami kredytowymi',
+    'sylius_refund.ui.net_total' => 'Suma netto',
+    'sylius_refund.ui.net_value' => 'Wartość netto',
+    'sylius_refund.ui.no' => 'Nr',
+    'sylius_refund.ui.order_number' => 'Numer zamówienia',
+    'sylius_refund.ui.partial_refund' => 'Częściowy zwrot',
+    'sylius_refund.ui.refund' => 'Zwrot',
+    'sylius_refund.ui.refund_all' => 'Zwróć wszystko',
+    'sylius_refund.ui.refund_payment_completed' => 'Zwrot środków został pomyślnie zakończony',
+    'sylius_refund.ui.refund_payments' => 'Zwrot kosztów',
+    'sylius_refund.ui.refund_value' => 'Wartość zwrotu',
+    'sylius_refund.ui.refunded' => 'Zwrócono',
+    'sylius_refund.ui.refunded_total' => 'Łączna kwota, za którą zwrócono środki',
+    'sylius_refund.ui.refunds' => 'Zwroty',
+    'sylius_refund.ui.resend' => 'Wyślij ponownie',
+    'sylius_refund.ui.seller' => 'Sprzedawca',
+    'sylius_refund.ui.tax_amount' => 'Tax amount',
+    'sylius_refund.ui.tax_rate' => 'Stawka podatku %',
+    'sylius_refund.ui.tax_total' => 'Suma podatku',
+    'sylius_refund.ui.unit_net_price' => 'Cena jednostkowa netto',
+    'sylius.ui.original_payment_method' => 'Oryginalna metoda płatności',
+    'sylius.ui.partially_refunded' => 'Częściowy zwrot',
   ),
   'pagerfanta' => 
   array (
@@ -2445,6 +2489,37 @@ $catalogueEn = new MessageCatalogue('en', array (
     'sylius.shipping_method.not_found' => 'The shipping method with %code% code does not exist.',
     'sylius.shipping_method.not_available' => 'The shipping method %name% is not available for this order. Please reselect your shipping method.',
     'sylius.shipping_method.shipping_address_not_found' => 'Order should be addressed first.',
+    'payplug_sylius_payplug_plugin.secret_key.not_blank' => 'The secret key cannot be empty.',
+    'payplug_sylius_payplug_plugin.secret_key.not_valid' => 'This is not a valid Payplug secret key.',
+    'payplug_sylius_payplug_plugin.oney.not_enabled' => 'Attention. To use the payment method “Oney by Payplug“ in LIVE mode,
+please contact us at support@payplug.com
+',
+    'payplug_sylius_payplug_plugin.oney.not_valid_phone_number' => 'This is not a valid cell phone number.',
+    'payplug_sylius_payplug_plugin.one_click.can_not_save_cards' => 'You do not have access to this feature. For more information,
+please contact us at: <a href="mailto:support@payplug.com" target="_blank">support@payplug.com</a>
+',
+    'payplug_sylius_payplug_plugin.bancontact.can_not_save_method_with_test_key' => 'The Bancontact payment method is not available for the TEST mode. 
+Please activate the LIVE mode by adding the corresponding secret key.
+',
+    'payplug_sylius_payplug_plugin.bancontact.can_not_save_method_no_access' => 'You don\'t have access to this feature yet. 
+To activate Bancontact, please fill in 
+<a href="https://support.payplug.com/hc/en-gb/requests/new?ticket_form_id=4583813991452" target="_blank">this form</a> 
+and activate the LIVE mode.
+',
+    'payplug_sylius_payplug_plugin.apple_pay.can_not_save_method_with_test_key' => 'The Apple Pay payment method is not available for the TEST mode.
+',
+    'payplug_sylius_payplug_plugin.apple_pay.can_not_save_method_no_access' => 'You don\'t have access to this feature yet. 
+To activate Apple Pay, please fill in 
+<a href="https://support.payplug.com/hc/en-gb/requests/new?ticket_form_id=5965121371548" target="_blank">this form</a>
+and activate the LIVE mode.
+',
+    'payplug_sylius_payplug_plugin.american_express.can_not_save_method_with_test_key' => 'The American Express payment method is not available for the TEST mode.
+',
+    'payplug_sylius_payplug_plugin.american_express.can_not_save_method_no_access' => 'You don\'t have access to this feature yet. 
+To activate American Express, please fill in 
+<a href="https://support.payplug.com/hc/en-gb/requests/new?ticket_form_id=6331992459420" target="_blank">this form</a>
+and activate the LIVE mode.
+',
   ),
   'security' => 
   array (
@@ -2543,6 +2618,22 @@ $catalogueEn = new MessageCatalogue('en', array (
     'sylius.pay_pal.payment_not_enabled' => 'PayPal payment could not be enabled. Try again later.',
     'sylius.pay_pal.something_went_wrong' => 'Something went wrong. Please, try again.',
     'sylius.pay_pal.webhook_url_not_valid' => 'PayPal could not verify provided webhook url. Make sure it is https and try again',
+    'sylius_refund.at_least_one_unit_should_be_selected_to_refund' => 'At least one unit should be selected to refund',
+    'sylius_refund.error_occurred' => 'Unexpected error occurred',
+    'sylius_refund.free_order_should_not_be_refund' => 'You cannot refund a free order',
+    'sylius_refund.order_should_be_paid' => 'Order should be paid for the units to could be refunded',
+    'sylius_refund.refund_amount_must_be_greater' => 'Refund amount must be greater than 0',
+    'sylius_refund.refund_amount_must_be_less' => 'You cannot refund more money than the refunded unit total',
+    'sylius_refund.refund_units_must_belong_to_order' => 'Refunded units must belong to the order',
+    'sylius_refund.refund_payment_completed' => 'Refund payment has been successfully completed',
+    'sylius_refund.resend_credit_memo_failed' => 'Resending credit memo failed',
+    'sylius_refund.resend_credit_memo_success' => 'Selected credit memo has been successfully resent',
+    'sylius_refund.unit_refund_exceeded' => 'You cannot refund more money than the order unit total',
+    'sylius_refund.units_successfully_refunded' => 'Selected order units have been successfully refunded',
+    'payplug_sylius_payplug_plugin.error.oney_not_enabled' => 'Oney is not (or is no longer) activated on your account.',
+    'payplug_sylius_payplug_plugin.error.api_unknow_error' => 'An error occurred. Please retry in few seconds.',
+    'payplug_sylius_payplug_plugin.error.transaction_failed_1click' => 'The transaction was not completed and your card was not charged.',
+    'payplug_sylius_payplug_plugin.warning.payment_success_no_card_saved' => 'The payment was successful but we were unable to save your credit card details.',
   ),
   'messages+intl-icu' => 
   array (
@@ -4109,6 +4200,151 @@ $catalogueEn = new MessageCatalogue('en', array (
     'sylius.pay_pal.sftp_username' => 'SFTP Username',
     'sylius.pay_pal.share_data_consent_confirmation' => 'By clicking Yes, you accept PayPal share data consent',
     'sylius.pay_pal.tender_type' => 'Refunded to the PayPal wallet',
+    'sylius_refund.ui.buyer' => 'Buyer',
+    'sylius_refund.ui.clear_refunds' => 'Clear all',
+    'sylius_refund.ui.new' => 'New',
+    'sylius_refund.ui.completed' => 'Completed',
+    'sylius_refund.ui.credit_memo' => 'Credit memo',
+    'sylius_refund.ui.credit_memos' => 'Credit memos',
+    'sylius_refund.ui.download' => 'Download',
+    'sylius_refund.ui.gross_value' => 'Gross value',
+    'sylius_refund.ui.issued_at' => 'Issued at',
+    'sylius_refund.ui.issued_for_order' => 'Issued for order',
+    'sylius_refund.ui.issued_from' => 'Issued from',
+    'sylius_refund.ui.manage_credit_memos' => 'Manage credit memos',
+    'sylius_refund.ui.net_total' => 'Net total',
+    'sylius_refund.ui.net_value' => 'Net value',
+    'sylius_refund.ui.no' => 'No.',
+    'sylius_refund.ui.order_number' => 'Order number',
+    'sylius_refund.ui.partial_refund' => 'Partial refund',
+    'sylius_refund.ui.refund' => 'Refund',
+    'sylius_refund.ui.refund_all' => 'Refund all',
+    'sylius_refund.ui.refund_payment_completed' => 'Refund payment completed sucessfully',
+    'sylius_refund.ui.refund_payments' => 'Refund payments',
+    'sylius_refund.ui.refund_value' => 'Refund value',
+    'sylius_refund.ui.refunded' => 'Refunded',
+    'sylius_refund.ui.refunded_total' => 'Refunded total',
+    'sylius_refund.ui.refunds' => 'Refunds',
+    'sylius_refund.ui.resend' => 'Resend',
+    'sylius_refund.ui.seller' => 'Seller',
+    'sylius_refund.ui.tax_amount' => 'Tax amount',
+    'sylius_refund.ui.tax_rate' => 'Tax rate %',
+    'sylius_refund.ui.tax_total' => 'Tax total',
+    'sylius_refund.ui.unit_net_price' => 'Unit net price',
+    'sylius.ui.original_payment_method' => 'Original Payment Method',
+    'sylius.ui.partially_refunded' => 'Partially refunded',
+    'payplug_sylius_payplug_plugin.admin.ui.oney_x3_with_fees_payment' => 'Oney 3x',
+    'payplug_sylius_payplug_plugin.admin.ui.oney_x4_with_fees_payment' => 'Oney 4x',
+    'payplug_sylius_payplug_plugin.admin.ui.oney_x3_without_fees_payment' => 'Oney 3x Without Fees',
+    'payplug_sylius_payplug_plugin.admin.ui.oney_x4_without_fees_payment' => 'Oney 4x Without Fees',
+    'payplug_sylius_payplug_plugin.ui.account.saved_cards.title' => 'Saved cards',
+    'payplug_sylius_payplug_plugin.ui.account.saved_cards.sub_title' => 'Manage your saved cards',
+    'payplug_sylius_payplug_plugin.ui.account.saved_cards.brand' => 'Brand',
+    'payplug_sylius_payplug_plugin.ui.account.saved_cards.mask' => 'Mask',
+    'payplug_sylius_payplug_plugin.ui.account.saved_cards.expire' => 'Expire',
+    'payplug_sylius_payplug_plugin.ui.account.saved_cards.expired' => 'Expired',
+    'payplug_sylius_payplug_plugin.ui.account.saved_cards.no_results_to_display' => 'You do not have saved cards',
+    'payplug_sylius_payplug_plugin.ui.account.saved_cards.mobile.brand' => 'Brand:',
+    'payplug_sylius_payplug_plugin.ui.account.saved_cards.mobile.mask' => 'Mask:',
+    'payplug_sylius_payplug_plugin.ui.account.saved_cards.mobile.expire' => 'Expire:',
+    'payplug_sylius_payplug_plugin.ui.account.saved_cards.deleted_successfully' => 'Card successfully deleted.',
+    'payplug_sylius_payplug_plugin.ui.account.saved_cards.deleted_error' => 'An error occurred. Please retry in few seconds.',
+    'payplug_sylius_payplug_plugin.ui.account.saved_cards.confirmation_modal.confirm_card_deletion' => 'Are you sure you want to delete this card?',
+    'payplug_sylius_payplug_plugin.ui.bancontact_gateway_label' => 'Bancontact by Payplug',
+    'payplug_sylius_payplug_plugin.ui.apple_pay_gateway_label' => 'Apple Pay by Payplug',
+    'payplug_sylius_payplug_plugin.ui.american_express_gateway_label' => 'American Express by Payplug',
+    'payplug_sylius_payplug_plugin.ui.error.billing.postcode' => 'The postal code %postalCode% entered for the billing address is invalid',
+    'payplug_sylius_payplug_plugin.ui.error.shipping.postcode' => 'The postal code %postalCode% entered for the delivery address is invalid',
+    'payplug_sylius_payplug_plugin.ui.secret_key' => 'Secret key',
+    'payplug_sylius_payplug_plugin.ui.payplug_gateway_label' => 'Payplug',
+    'payplug_sylius_payplug_plugin.ui.payment_refund_locally' => 'The payment refund was made locally only.',
+    'payplug_sylius_payplug_plugin.ui.retrieve_secret_key_in_api_configuration_portal' => 'Find your LIVE and TEST Secret Keys in your <a href="https://portal.payplug.com/#/configuration/api" target="_blank">Payplug portal</a>',
+    'payplug_sylius_payplug_plugin.ui.test_mode' => 'TEST Mode',
+    'payplug_sylius_payplug_plugin.ui.payplug_id' => 'Payplug ID: %paymentId%
+',
+    'payplug_sylius_payplug_plugin.ui.payplug_refund_gateway_is_not_activated' => 'Payplug has not been activated as a refund method',
+    'payplug_sylius_payplug_plugin.ui.impossible_to_refund_this_payment' => 'This payment cannot be refunded',
+    'payplug_sylius_payplug_plugin.ui.oney_gateway_label' => 'Oney by Payplug',
+    'payplug_sylius_payplug_plugin.ui.oney' => 'Oney',
+    'payplug_sylius_payplug_plugin.ui.oney_transaction_less_than_forty_eight_hours' => 'The refund will be possible 48 hours after the last payment or refund transaction.',
+    'payplug_sylius_payplug_plugin.ui.or_pay_with_oney' => 'Or pay in',
+    'payplug_sylius_payplug_plugin.ui.pay' => 'Payment',
+    'payplug_sylius_payplug_plugin.ui.3x_payment' => 'Pay in 3 installments',
+    'payplug_sylius_payplug_plugin.ui.4x_payment' => 'Pay in 4 installments',
+    'payplug_sylius_payplug_plugin.ui.oney_x3_with_fees_payment' => 'Payment in 3x',
+    'payplug_sylius_payplug_plugin.ui.oney_x4_with_fees_payment' => 'Payment in 4x',
+    'payplug_sylius_payplug_plugin.ui.oney_x3_without_fees_payment' => 'Payment in 3x without fees',
+    'payplug_sylius_payplug_plugin.ui.oney_x4_without_fees_payment' => 'Payment in 4x without fees',
+    'payplug_sylius_payplug_plugin.ui.by_credit_cart' => 'By credit card',
+    'payplug_sylius_payplug_plugin.ui.cancel' => 'Cancel',
+    'payplug_sylius_payplug_plugin.ui.popin_close' => 'Close',
+    'payplug_sylius_payplug_plugin.ui.popin_paiement_desc' => '<p><strong>Downpayment: %apport% <br>
++ %nb_mensuality% monthly installments of: %mensuality%</strong> <br>
+Of which cost of financing: %cost% APR: %percentage%%</p>
+',
+    'payplug_sylius_payplug_plugin.ui.payment_choice.current_total' => 'For an amount of',
+    'payplug_sylius_payplug_plugin.ui.payment_choice.down_payment_amount' => 'First installment of',
+    'payplug_sylius_payplug_plugin.ui.payment_choice.effective_annual_percentage_rate' => 'APR',
+    'payplug_sylius_payplug_plugin.ui.payment_choice.total_cost' => 'Financing cost',
+    'payplug_sylius_payplug_plugin.ui.payment_choice.installment_amount' => 'Instalment no.',
+    'payplug_sylius_payplug_plugin.ui.payment_choice.grand_total' => 'Total',
+    'payplug_sylius_payplug_plugin.ui.popin_legal_mention' => '<small>
+    Offre de financement avec apport
+    obligatoire, réservée aux particuliers
+    et valable pour tout achat de %min_amount% à
+    %max_amount%. Sous réserve d’acceptation par
+    Oney Bank. Vous disposez d’un délai
+    de 14 jours pour renoncer à votre
+    crédit. Oney Bank - SA au capital de
+    50 741 215€ - 40 Avenue de Flandre 59
+
+    170 Croix - 546 380 197 RCS Lille Métro-
+    pole - n° Orias 07 023 261 www.orias.fr.
+
+    Correspondance : CS 60 006 - 59895
+    Lille Cedex - www.oney.fr
+</small>
+',
+    'payplug_sylius_payplug_plugin.ui.too_much_quantity' => 'To pay with Oney, your cart must contain less than %max_articles% items.',
+    'payplug_sylius_payplug_plugin.ui.invalid_cart_price' => 'To pay with Oney, the total amount of your cart must be between %min_amount% and %max_amount%.',
+    'payplug_sylius_payplug_plugin.ui.refund_minimum_amount_requirement_not_met' => 'The amount to be refunded must be at least €0.10',
+    'payplug_sylius_payplug_plugin.ui.oney_unavailable' => 'Your payment schedule simulation is temporarily unavailable. You will find this information at the payment stage.',
+    'payplug_sylius_payplug_plugin.ui.oney_gateway_config.info' => 'Allow customers to spread out payments over 3 or 4 installments from 100€ to 3000€.
+<a href="%link%" target="_blank">Learn more</a>
+',
+    'payplug_sylius_payplug_plugin.ui.oney_gateway_config.fees_for.title' => 'The fees are:',
+    'payplug_sylius_payplug_plugin.ui.oney_gateway_config.fees_for.client' => 'Split between you and your customers',
+    'payplug_sylius_payplug_plugin.ui.oney_gateway_config.fees_for.merchant' => 'For you',
+    'payplug_sylius_payplug_plugin.ui.integrated_payment.card_holder.title' => 'Cardholder name',
+    'payplug_sylius_payplug_plugin.ui.integrated_payment.card_holder.error' => 'Invalid Name and/or Last Name.',
+    'payplug_sylius_payplug_plugin.ui.integrated_payment.pan.title' => 'Card number',
+    'payplug_sylius_payplug_plugin.ui.integrated_payment.pan.error' => 'Invalid card number.',
+    'payplug_sylius_payplug_plugin.ui.integrated_payment.cvv.title' => '123',
+    'payplug_sylius_payplug_plugin.ui.integrated_payment.cvv.error' => 'Invalid CVV.',
+    'payplug_sylius_payplug_plugin.ui.integrated_payment.exp.title' => 'MM/YY',
+    'payplug_sylius_payplug_plugin.ui.integrated_payment.exp.error' => 'Invalid expiration date.',
+    'payplug_sylius_payplug_plugin.ui.integrated_payment.empty' => 'Mandatory field.',
+    'payplug_sylius_payplug_plugin.ui.integrated_payment.scheme.label' => 'Your card',
+    'payplug_sylius_payplug_plugin.ui.integrated_payment.place_order.label' => 'Place order',
+    'payplug_sylius_payplug_plugin.ui.integrated_payment.transaction_secure.label' => 'Transaction secured by',
+    'payplug_sylius_payplug_plugin.ui.integrated_payment.privacy_policy.label' => 'Privacy Policy',
+    'payplug_sylius_payplug_plugin.form.oney_error' => 'Some missing information is required to pay using Oney by Payplug',
+    'payplug_sylius_payplug_plugin.form.complete_info.missing_title' => 'Missing information',
+    'payplug_sylius_payplug_plugin.form.complete_info.success_title' => 'Saved information',
+    'payplug_sylius_payplug_plugin.form.complete_info.success_instruction' => 'Click "Next" again to continue',
+    'payplug_sylius_payplug_plugin.form.complete_info.email' => 'Please enter your email address:
+',
+    'payplug_sylius_payplug_plugin.form.complete_info.phone' => 'Please enter your cell phone number:
+',
+    'payplug_sylius_payplug_plugin.form.complete_info.submit' => 'Confirm and continue',
+    'payplug_sylius_payplug_plugin.form.base_currency_not_euro' => 'Channel #channel_code#: #payment_method# is only available on channels with EURO as a currency
+',
+    'payplug_sylius_payplug_plugin.form.only_one_gateway_allowed' => 'Please note that the %gateway_title% payment method has already been set. To change it, go to your <a href="/admin/payment-methods/" target="_blank">payment methods</a>.
+',
+    'payplug_sylius_payplug_plugin.form.one_click_enable' => 'Enable One click',
+    'payplug_sylius_payplug_plugin.form.one_click_help' => 'Allow your customers to save their credit card details for later
+',
+    'payplug_sylius_payplug_plugin.form.integrated_payment_enable' => 'Enable payment integrated',
   ),
   'SonataBlockBundle' => 
   array (

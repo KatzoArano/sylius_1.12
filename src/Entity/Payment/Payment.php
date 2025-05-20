@@ -6,6 +6,8 @@ namespace App\Entity\Payment;
 
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Core\Model\Payment as BasePayment;
+use PayPlug\SyliusPayPlugPlugin\Entity\Traits\PaymentTrait;
+
 
 /**
  * @ORM\Entity
@@ -15,4 +17,5 @@ use Sylius\Component\Core\Model\Payment as BasePayment;
 #[ORM\Table(name: 'sylius_payment')]
 class Payment extends BasePayment
 {
+    use PaymentTrait;
 }

@@ -6,6 +6,7 @@ namespace App\Entity\Customer;
 
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Core\Model\Customer as BaseCustomer;
+use PayPlug\SyliusPayPlugPlugin\Entity\Traits\CustomerTrait;
 
 /**
  * @ORM\Entity
@@ -15,4 +16,5 @@ use Sylius\Component\Core\Model\Customer as BaseCustomer;
 #[ORM\Table(name: 'sylius_customer')]
 class Customer extends BaseCustomer
 {
+    use CustomerTrait;
 }

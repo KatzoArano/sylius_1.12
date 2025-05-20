@@ -1,0 +1,65 @@
+sylius_refund_order_refunds_list:
+    path: /orders/{orderNumber}/refunds
+    methods: [GET]
+    defaults:
+        _controller: Sylius\RefundPlugin\Action\Admin\OrderRefundsListAction
+
+sylius_refund_refund_units:
+    path: /orders/{orderNumber}/refund-units
+    defaults:
+        _controller: Sylius\RefundPlugin\Action\Admin\RefundUnitsAction
+
+sylius_refund_credit_memo:
+    resource: |
+        alias: sylius_refund.credit_memo
+        section: admin
+        templates: "@SyliusAdmin\\Crud"
+        only: ['index']
+        grid: sylius_refund_credit_memo
+        permission: true
+        vars:
+            all:
+                subheader: sylius_refund.ui.manage_credit_memos
+            index:
+                icon: inbox
+    type: sylius.resource
+
+sylius_refund_order_credit_memos_list:
+    path: /orders/{orderId}/credit-memos
+    methods: [GET]
+    defaults:
+        _controller: sylius_refund.controller.credit_memo::indexAction
+        _sylius:
+            template: "@SyliusRefundPlugin/Order/Admin/CreditMemo/list.html.twig"
+            repository:
+                method: findByOrderId
+                arguments: $orderId
+
+sylius_refund_credit_memo_details:
+    path: /orders/{orderNumber}/credit-memos/{id}
+    methods: [GET]
+    defaults:
+        _controller: sylius_refund.controller.credit_memo::showAction
+        _sylius:
+            template: "@SyliusRefundPlugin/Order/Admin/CreditMemo/details.html.twig"
+            criteria:
+                id: $id
+
+sylius_refund_admin_credit_memo_download:
+    path: /credit-memos/{id}/download
+    methods: [GET]
+    defaults:
+        _controller: Sylius\RefundPlugin\Action\Admin\DownloadCreditMemoAction
+
+
+sylius_refund_complete_refund_payment:
+    path: /orders/{orderNumber}/refund-payments/{id}/complete
+    methods: [POST]
+    defaults:
+        _controller: Sylius\RefundPlugin\Action\CompleteRefundPaymentAction
+
+sylius_refund_admin_credit_memo_send:
+    path: /credit-memos/{id}/send
+    methods: [GET]
+    defaults:
+        _controller: Sylius\RefundPlugin\Action\Admin\SendCreditMemoAction

@@ -25,6 +25,7 @@
     ],
     "require": {
         "php": "^8.1",
+        "payplug/sylius-payplug-plugin": "1.10.0",
         "sylius/paypal-plugin": "^1.6",
         "sylius/state-machine-abstraction": "~1.13.0",
         "sylius/sylius": "~1.12.17",
@@ -88,12 +89,9 @@
             "dev-master": "1.12-dev"
         },
         "symfony": {
-            "allow-contrib": false,
+            "allow-contrib": "true",
             "require": "^6.4",
-            "endpoint": [
-                "https://api.github.com/repos/Sylius/SyliusRecipes/contents/index.json?ref=flex/main",
-                "flex://defaults"
-            ]
+            "endpoint": ["https://api.github.com/repos/Sylius/SyliusRecipes/contents/index.json?ref=flex/main", "flex://defaults"]
         }
     },
     "autoload": {

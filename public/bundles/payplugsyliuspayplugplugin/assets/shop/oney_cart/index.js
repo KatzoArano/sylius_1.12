@@ -1,0 +1,1 @@
+!function(){const n={init(){n.position()},position(){let n=$(".oney-info");n.next().insertBefore(n)}};document.addEventListener("DOMContentLoaded",n.init,!1)}();

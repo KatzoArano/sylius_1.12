@@ -7,6 +7,7 @@ namespace App\Entity\Payment;
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Core\Model\PaymentMethod as BasePaymentMethod;
 use Sylius\Component\Payment\Model\PaymentMethodTranslationInterface;
+use PayPlug\SyliusPayPlugPlugin\Entity\Traits\PaymentMethodTrait;
 
 /**
  * @ORM\Entity
@@ -16,6 +17,8 @@ use Sylius\Component\Payment\Model\PaymentMethodTranslationInterface;
 #[ORM\Table(name: 'sylius_payment_method')]
 class PaymentMethod extends BasePaymentMethod
 {
+    use PaymentMethodTrait;
+    
     protected function createTranslation(): PaymentMethodTranslationInterface
     {
         return new PaymentMethodTranslation();

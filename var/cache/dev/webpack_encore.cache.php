@@ -4,8 +4,54 @@
 
 return [[
 
+'admin' => 0,
+'shop' => 1,
+'app.admin' => 2,
+'app.shop' => 3,
 
 ], [
 
+0 => [
+    'entrypoints' => [
+        'admin-entry' => [
+            'css' => [
+                '/build/admin/admin-entry.css',
+            ],
+            'js' => [
+                '/build/admin/admin-entry.js',
+            ],
+        ],
+    ],
+],
+1 => [
+    'entrypoints' => [
+        'shop-entry' => [
+            'css' => [
+                '/build/shop/shop-entry.css',
+            ],
+            'js' => [
+                '/build/shop/shop-entry.js',
+            ],
+        ],
+    ],
+],
+2 => [
+    'entrypoints' => [
+        'app-admin-entry' => [
+            'js' => [
+                '/build/app/admin/app-admin-entry.js',
+            ],
+        ],
+    ],
+],
+3 => [
+    'entrypoints' => [
+        'app-shop-entry' => [
+            'js' => [
+                '/build/app/shop/app-shop-entry.js',
+            ],
+        ],
+    ],
+],
 
 ]];

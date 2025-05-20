@@ -1,0 +1,172 @@
+imports:
+    - { resource: "@SyliusRefundPlugin/Resources/config/app/events.yaml" }
+    - { resource: "@SyliusRefundPlugin/Resources/config/app/integrations.php" }
+
+parameters:
+    sylius_refund.credit_memo_save_path: "%kernel.project_dir%/private/credit_memos/"
+    sylius_refund.filesystem_adapter.credit_memo: "sylius_refund_credit_memo"
+    sylius_refund.refund_enum_type: Sylius\RefundPlugin\Entity\Type\RefundEnumType
+    sylius_refund.refund_type: Sylius\RefundPlugin\Model\RefundType
+
+sylius_refund:
+    pdf_generator:
+        allowed_files:
+            - '%env(default:default_logo_file:resolve:SYLIUS_REFUND_LOGO_FILE)%'
+
+sylius_resource:
+    resources:
+        sylius_refund.credit_memo:
+            classes:
+                model: Sylius\RefundPlugin\Entity\CreditMemo
+                repository: Sylius\RefundPlugin\Doctrine\ORM\CreditMemoRepository
+        sylius_refund.line_item:
+            classes:
+                model: Sylius\RefundPlugin\Entity\LineItem
+                interface: Sylius\RefundPlugin\Entity\LineItemInterface
+                factory: Sylius\RefundPlugin\Factory\LineItemFactory
+        sylius_refund.tax_item:
+            classes:
+                model: Sylius\RefundPlugin\Entity\TaxItem
+                interface: Sylius\RefundPlugin\Entity\TaxItemInterface
+        sylius_refund.refund:
+            classes:
+                model: Sylius\RefundPlugin\Entity\Refund
+                factory: Sylius\RefundPlugin\Factory\RefundFactory
+        sylius_refund.refund_payment:
+            classes:
+                model: Sylius\RefundPlugin\Entity\RefundPayment
+                factory: Sylius\RefundPlugin\Factory\RefundPaymentFactory
+        sylius_refund.customer_billing_data:
+            classes:
+                model: Sylius\RefundPlugin\Entity\CustomerBillingData
+        sylius_refund.shop_billing_data:
+            classes:
+                model: Sylius\RefundPlugin\Entity\ShopBillingData
+
+sylius_mailer:
+    emails:
+        units_refunded:
+            subject: Units refunded
+            template: "@SyliusRefundPlugin/Email/unitsRefunded.html.twig"
+
+framework:
+    messenger:
+        buses:
+            sylius.command_bus: &command_bus
+                middleware:
+                    - 'validation'
+                    - 'doctrine_transaction'
+            sylius.event_bus: &event_bus
+                default_middleware: allow_no_handlers
+            sylius_refund_plugin.command_bus: *command_bus
+            sylius_refund_plugin.event_bus: *event_bus
+
+winzou_state_machine:
+    sylius_refund_refund_payment:
+        class: Sylius\RefundPlugin\Entity\RefundPayment
+        property_path: state
+        graph: sylius_refund_refund_payment
+        state_machine_class: "%sylius.state_machine.class%"
+        states:
+            new: ~
+            completed: ~
+        transitions:
+            complete:
+                from: [new]
+                to: completed
+
+sylius_grid:
+    grids:
+        sylius_refund_credit_memo:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%sylius_refund.model.credit_memo.class%"
+            sorting:
+                number: asc
+            fields:
+                number:
+                    type: string
+                    label: sylius.ui.number
+                    sortable: ~
+                order:
+                    type: twig
+                    label: sylius.ui.order
+                    sortable: order.number
+                    options:
+                        template: "@SyliusRefundPlugin/Order/Grid/Field/number.html.twig"
+                channel:
+                    type: twig
+                    label: sylius.ui.channel
+                    options:
+                        template: "@SyliusRefundPlugin/Order/Grid/Field/channel.html.twig"
+                total:
+                    type: twig
+                    label: sylius.ui.total
+                    path: .
+                    sortable: total
+                    options:
+                        template: "@SyliusAdmin/Order/Grid/Field/total.html.twig"
+                issuedAt:
+                    type: datetime
+                    label: sylius_refund.ui.issued_at
+                    options:
+                        format: 'Y-m-d H:i:s'
+            actions:
+                item:
+                    show:
+                        type: show
+                        label: sylius.ui.show
+                        icon: eye
+                        options:
+                            link:
+                                route: sylius_refund_credit_memo_details
+                                parameters:
+                                    id: resource.id
+                                    orderNumber: resource.order.number
+                    download:
+                        type: default
+                        label: sylius_refund.ui.download
+                        enabled: '%sylius_refund.pdf_generator.enabled%'
+                        icon: download
+                        options:
+                            link:
+                                route: sylius_refund_admin_credit_memo_download
+                                parameters:
+                                    id: resource.id
+                    resend:
+                        type: default
+                        label: sylius_refund.ui.resend
+                        icon: send
+                        options:
+                            link:
+                                route: sylius_refund_admin_credit_memo_send
+                                parameters:
+                                    id: resource.id
+            filters:
+                number:
+                    type: string
+                    label: sylius.ui.number
+                issuedAt:
+                    type: date
+                    label: sylius_refund.ui.issued_at
+                channel:
+                    type: entity
+                    label: sylius.ui.channel
+                    form_options:
+                        class: "%sylius.model.channel.class%"
+
+doctrine:
+    dbal:
+        types:
+            sylius_refund_refund_type: "%sylius_refund.refund_enum_type%"
+
+knp_gaufrette:
+    adapters:
+        sylius_refund_credit_memo:
+            local:
+                directory: "%sylius_refund.credit_memo_save_path%"
+                create: true
+    filesystems:
+        sylius_refund_credit_memo:
+            adapter: "%sylius_refund.filesystem_adapter.credit_memo%"

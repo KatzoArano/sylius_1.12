@@ -67,10 +67,10 @@ class Customer extends \App\Entity\Customer\Customer implements \Doctrine\ORM\Pr
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'orders', 'defaultAddress', 'addresses', 'user', 'id', 'email', 'emailCanonical', 'firstName', 'lastName', 'birthday', 'gender', 'group', 'phoneNumber', 'subscribedToNewsletter', 'createdAt', 'updatedAt'];
+            return ['__isInitialized__', 'orders', 'defaultAddress', 'addresses', 'user', 'id', 'email', 'emailCanonical', 'firstName', 'lastName', 'birthday', 'gender', 'group', 'phoneNumber', 'subscribedToNewsletter', 'createdAt', 'updatedAt', 'cards'];
         }
 
-        return ['__isInitialized__', 'orders', 'defaultAddress', 'addresses', 'user', 'id', 'email', 'emailCanonical', 'firstName', 'lastName', 'birthday', 'gender', 'group', 'phoneNumber', 'subscribedToNewsletter', 'createdAt', 'updatedAt'];
+        return ['__isInitialized__', 'orders', 'defaultAddress', 'addresses', 'user', 'id', 'email', 'emailCanonical', 'firstName', 'lastName', 'birthday', 'gender', 'group', 'phoneNumber', 'subscribedToNewsletter', 'createdAt', 'updatedAt', 'cards'];
     }
 
     /**
@@ -586,6 +586,28 @@ class Customer extends \App\Entity\Customer\Customer implements \Doctrine\ORM\Pr
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUpdatedAt', [$updatedAt]);
 
         parent::setUpdatedAt($updatedAt);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCards(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCards', []);
+
+        return parent::getCards();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addCard(\PayPlug\SyliusPayPlugPlugin\Entity\Card $card): \App\Entity\Customer\Customer
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addCard', [$card]);
+
+        return parent::addCard($card);
     }
 
 }

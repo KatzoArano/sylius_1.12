@@ -20,17 +20,17 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-        '9b38cf48e83f5d8f60375221cd213eee' => __DIR__ . '/..' . '/phpstan/phpstan/bootstrap.php',
         '9c67151ae59aff4788964ce8eb2a0f43' => __DIR__ . '/..' . '/clue/stream-filter/src/functions_include.php',
-        '9d2b9fc6db0f153a0a149fefb182415e' => __DIR__ . '/..' . '/symfony/polyfill-php84/bootstrap.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
-        '3722f872abd441c379baeab7b88038ba' => __DIR__ . '/..' . '/nelmio/alice/src/deep_clone.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '8cff32064859f4559445b89279f3199c' => __DIR__ . '/..' . '/php-http/message/src/filters.php',
-        '2a3c2110e8e0295330dc3d11a4cbc4cb' => __DIR__ . '/..' . '/php-webdriver/webdriver/lib/Exception/TimeoutException.php',
         '72280e2fa915e603a1f900c17186d14b' => __DIR__ . '/..' . '/api-platform/core/src/deprecation.php',
+        '9b38cf48e83f5d8f60375221cd213eee' => __DIR__ . '/..' . '/phpstan/phpstan/bootstrap.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
+        '9d2b9fc6db0f153a0a149fefb182415e' => __DIR__ . '/..' . '/symfony/polyfill-php84/bootstrap.php',
+        '3722f872abd441c379baeab7b88038ba' => __DIR__ . '/..' . '/nelmio/alice/src/deep_clone.php',
+        '2a3c2110e8e0295330dc3d11a4cbc4cb' => __DIR__ . '/..' . '/php-webdriver/webdriver/lib/Exception/TimeoutException.php',
         'c72349b1fe8d0deeedd3a52e8aa814d8' => __DIR__ . '/..' . '/mockery/mockery/library/helpers.php',
         'ce9671a430e4846b44e1c68c7611f9f5' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
@@ -48,6 +48,10 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
             'phpseclib\\' => 10,
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'l' => 
+        array (
+            'libphonenumber\\' => 15,
+        ),
         'e' => 
         array (
             'enshrined\\svgSanitize\\' => 22,
@@ -61,7 +65,9 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
         array (
             'Twig\\Extra\\Intl\\' => 16,
             'Twig\\' => 5,
+            'Tests\\Sylius\\RefundPlugin\\' => 26,
             'Tests\\Sylius\\PayPalPlugin\\' => 26,
+            'Tests\\PayPlug\\SyliusPayPlugPlugin\\' => 34,
         ),
         'S' => 
         array (
@@ -101,6 +107,7 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
             'Symfony\\Component\\Messenger\\Bridge\\Doctrine\\' => 44,
             'Symfony\\Component\\Messenger\\' => 28,
             'Symfony\\Component\\Mailer\\' => 25,
+            'Symfony\\Component\\Lock\\' => 23,
             'Symfony\\Component\\Intl\\' => 23,
             'Symfony\\Component\\HttpKernel\\' => 29,
             'Symfony\\Component\\HttpFoundation\\' => 33,
@@ -133,6 +140,7 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
             'Symfony\\Bridge\\Doctrine\\' => 24,
             'Sylius\\SyliusRector\\' => 20,
             'Sylius\\Resource\\' => 16,
+            'Sylius\\RefundPlugin\\' => 20,
             'Sylius\\PayPalPlugin\\' => 20,
             'Sylius\\Component\\Resource\\' => 26,
             'Sylius\\Component\\Registry\\' => 26,
@@ -185,6 +193,8 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
             'Payum\\ISO4217\\' => 14,
             'Payum\\Bundle\\PayumBundle\\' => 25,
             'Payum\\' => 6,
+            'Payplug\\' => 8,
+            'PayPlug\\SyliusPayPlugPlugin\\' => 28,
             'Pagerfanta\\Twig\\' => 16,
             'Pagerfanta\\Solarium\\' => 20,
             'Pagerfanta\\Elastica\\' => 20,
@@ -209,6 +219,7 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
         ),
         'M' => 
         array (
+            'MyCLabs\\Enum\\' => 13,
             'Monolog\\' => 8,
             'Mockery\\' => 8,
             'Metadata\\' => 9,
@@ -231,7 +242,9 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
         ),
         'K' => 
         array (
+            'Knp\\Snappy\\' => 11,
             'Knp\\Menu\\' => 9,
+            'Knp\\Bundle\\SnappyBundle\\' => 24,
             'Knp\\Bundle\\MenuBundle\\' => 22,
             'Knp\\Bundle\\GaufretteBundle\\' => 27,
         ),
@@ -258,6 +271,7 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
+            'Giggsey\\Locale\\' => 15,
             'Gedmo\\' => 6,
         ),
         'F' => 
@@ -348,6 +362,10 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
         ),
+        'libphonenumber\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/giggsey/libphonenumber-for-php/src',
+        ),
         'enshrined\\svgSanitize\\' => 
         array (
             0 => __DIR__ . '/..' . '/enshrined/svg-sanitize/src',
@@ -368,9 +386,17 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
         ),
+        'Tests\\Sylius\\RefundPlugin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sylius/refund-plugin/tests',
+        ),
         'Tests\\Sylius\\PayPalPlugin\\' => 
         array (
             0 => __DIR__ . '/..' . '/sylius/paypal-plugin/tests',
+        ),
+        'Tests\\PayPlug\\SyliusPayPlugPlugin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/payplug/sylius-payplug-plugin/tests',
         ),
         'Symfony\\WebpackEncoreBundle\\' => 
         array (
@@ -516,6 +542,10 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
         array (
             0 => __DIR__ . '/..' . '/symfony/mailer',
         ),
+        'Symfony\\Component\\Lock\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/lock',
+        ),
         'Symfony\\Component\\Intl\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/intl',
@@ -643,6 +673,10 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
         'Sylius\\Resource\\' => 
         array (
             0 => __DIR__ . '/..' . '/sylius/resource-bundle/src/Component/src',
+        ),
+        'Sylius\\RefundPlugin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sylius/refund-plugin/src',
         ),
         'Sylius\\PayPalPlugin\\' => 
         array (
@@ -830,6 +864,14 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
         array (
             0 => __DIR__ . '/..' . '/payum/payum/src/Payum',
         ),
+        'Payplug\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/payplug/payplug-php/lib/Payplug',
+        ),
+        'PayPlug\\SyliusPayPlugPlugin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/payplug/sylius-payplug-plugin/src',
+        ),
         'Pagerfanta\\Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/pagerfanta/pagerfanta/lib/Twig',
@@ -903,6 +945,10 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
         array (
             0 => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE',
         ),
+        'MyCLabs\\Enum\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/myclabs/php-enum/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -969,9 +1015,17 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-code/src',
         ),
+        'Knp\\Snappy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-snappy/src/Knp/Snappy',
+        ),
         'Knp\\Menu\\' => 
         array (
             0 => __DIR__ . '/..' . '/knplabs/knp-menu/src/Knp/Menu',
+        ),
+        'Knp\\Bundle\\SnappyBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-snappy-bundle/src',
         ),
         'Knp\\Bundle\\MenuBundle\\' => 
         array (
@@ -999,8 +1053,8 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
         ),
         'Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/php-http/message-factory/src',
-            1 => __DIR__ . '/..' . '/php-http/message/src',
+            0 => __DIR__ . '/..' . '/php-http/message/src',
+            1 => __DIR__ . '/..' . '/php-http/message-factory/src',
         ),
         'Http\\Discovery\\' => 
         array (
@@ -1029,6 +1083,10 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
         'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
+        'Giggsey\\Locale\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/giggsey/locale/src',
         ),
         'Gedmo\\' => 
         array (
@@ -1271,6 +1329,10 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
             'PhpSpec' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/phpspec/src',
+            ),
+            'Payplug\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/payplug/payplug-php/lib',
             ),
         ),
         'L' => 
@@ -1977,6 +2039,7 @@ class ComposerStaticInit4cde505debb0af990996d9d5f1b2ef07
         'SebastianBergmann\\Type\\UnknownType' => __DIR__ . '/..' . '/sebastian/type/src/UnknownType.php',
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'Stringable' => __DIR__ . '/..' . '/myclabs/php-enum/stubs/Stringable.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
         'TheSeer\\Tokenizer\\Exception' => __DIR__ . '/..' . '/theseer/tokenizer/src/Exception.php',
         'TheSeer\\Tokenizer\\NamespaceUri' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUri.php',

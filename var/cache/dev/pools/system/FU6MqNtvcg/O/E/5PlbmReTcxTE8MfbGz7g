@@ -1,0 +1,3 @@
+<?php //Sylius%255CRefundPlugin%255CEntity%255CRefundPaymentInterface
+
+return [PHP_INT_MAX, []];
