@@ -1,0 +1,119 @@
+<?php //resource_metadata_908e7e85508345c6cc292acf78c7b78c
+
+return [PHP_INT_MAX, static fn () => \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['ApiPlatform\\Core\\Metadata\\Resource\\ResourceMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Metadata\\Resource\\ResourceMetadata')),
+    ],
+    null,
+    [
+        'ApiPlatform\\Core\\Metadata\\Resource\\ResourceMetadata' => [
+            'shortName' => [
+                'AdminResetPasswordRequest',
+            ],
+            'itemOperations' => [
+                [
+                    'admin_update_reset_password_request' => [
+                        'method' => 'PATCH',
+                        'path' => '/admin/reset-password-requests/{resetPasswordToken}',
+                        'input' => [
+                            'class' => 'Sylius\\Bundle\\CoreBundle\\Message\\Admin\\Account\\ResetPassword',
+                            'name' => 'ResetPassword',
+                        ],
+                        'output' => [
+                            'class' => null,
+                        ],
+                        'status' => 202,
+                        'denormalization_context' => [
+                            'groups' => 'admin:reset_password:update',
+                        ],
+                        'openapi_context' => [
+                            'summary' => 'Resets administrator\'s password',
+                        ],
+                        'stateless' => null,
+                        'input_formats' => [
+                            'json' => [
+                                'application/merge-patch+json',
+                                'application/merge-patch+json',
+                            ],
+                        ],
+                        'output_formats' => [
+                            'jsonld' => [
+                                'application/ld+json',
+                            ],
+                            'json' => [
+                                'application/json',
+                            ],
+                            'html' => [
+                                'text/html',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'collectionOperations' => [
+                [
+                    'admin_create_reset_password_request' => [
+                        'method' => 'POST',
+                        'path' => '/admin/reset-password-requests',
+                        'input' => [
+                            'class' => 'Sylius\\Bundle\\CoreBundle\\Message\\Admin\\Account\\RequestResetPasswordEmail',
+                            'name' => 'RequestResetPasswordEmail',
+                        ],
+                        'output' => [
+                            'class' => null,
+                        ],
+                        'status' => 202,
+                        'denormalization_context' => [
+                            'groups' => 'admin:reset_password:create',
+                        ],
+                        'openapi_context' => [
+                            'summary' => 'Requests administrator\'s password reset',
+                        ],
+                        'stateless' => null,
+                        'input_formats' => [
+                            'jsonld' => [
+                                'application/ld+json',
+                            ],
+                            'json' => [
+                                'application/json',
+                            ],
+                            'html' => [
+                                'text/html',
+                            ],
+                        ],
+                        'output_formats' => [
+                            'jsonld' => [
+                                'application/ld+json',
+                            ],
+                            'json' => [
+                                'application/json',
+                            ],
+                            'html' => [
+                                'text/html',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'graphql' => [
+                [
+                    'item_query' => [],
+                    'collection_query' => [],
+                    'delete' => [],
+                    'update' => [],
+                    'create' => [],
+                ],
+            ],
+            'attributes' => [
+                [
+                    'validation_groups' => 'sylius',
+                    'messenger' => 'input',
+                    'input' => null,
+                    'output' => null,
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+)];

@@ -1,0 +1,53 @@
+<?php //property_metadata_c385ab943f1e3c9ca700ca904b196b03
+
+return [PHP_INT_MAX, static fn () => \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['ApiPlatform\\Core\\Metadata\\Property\\PropertyMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Metadata\\Property\\PropertyMetadata')),
+        clone ($p['Symfony\\Component\\PropertyInfo\\Type'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\PropertyInfo\\Type')),
+    ],
+    null,
+    [
+        'ApiPlatform\\Core\\Metadata\\Property\\PropertyMetadata' => [
+            'type' => [
+                $o[1],
+            ],
+            'readable' => [
+                true,
+            ],
+            'writable' => [
+                true,
+            ],
+            'required' => [
+                false,
+            ],
+            'identifier' => [
+                false,
+            ],
+            'initializable' => [
+                false,
+            ],
+        ],
+        'Symfony\\Component\\PropertyInfo\\Type' => [
+            'builtinType' => [
+                1 => 'string',
+            ],
+            'nullable' => [
+                1 => true,
+            ],
+            'class' => [
+                1 => null,
+            ],
+            'collection' => [
+                1 => false,
+            ],
+            'collectionKeyType' => [
+                1 => [],
+            ],
+            'collectionValueType' => [
+                1 => [],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+)];

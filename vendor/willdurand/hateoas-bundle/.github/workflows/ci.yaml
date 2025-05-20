@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - "master"
+  push:
+    branches:
+      - "master"
+
+jobs:
+  phpunit:
+    name: "PHPUnit"
+    runs-on: "ubuntu-20.04"
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version:
+          - "8.1"
+          - "8.2"
+          - "8.3"
+          - "8.4"
+        dependencies:
+          - "highest"
+          - "lowest"
+        remove-annotations:
+          - "yes"
+          - "no"
+        symfony-require:
+          - "^3.0"
+          - "^4.0"
+          - "^5.0"
+          - "^6.0"
+          - "^7.0"
+        exclude:
+          # Symfony 3 and 4 would install jms/serializer-bundle:4
+          # which is not usable without annotations
+          - symfony-require: "^3.0"
+            remove-annotations: "yes"
+          - symfony-require: "^4.0"
+            remove-annotations: "yes"
+          # Symfony 7 requires at least PHP 8.2
+          - php-version: 8.1
+            symfony-require: "^7.0"
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          php-version: "${{ matrix.php-version }}"
+          coverage: "pcov"
+          ini-values: "zend.assertions=1"
+          tools: "flex"
+
+      - name: "Remove remove-annotations if required"
+        if: "${{ matrix.remove-annotations == 'yes' }}"
+        env:
+          SYMFONY_REQUIRE: "${{ matrix.symfony-require }}"
+        run: |
+          composer remove --no-update --dev doctrine/annotations
+
+      - name: "Install dependencies with Composer"
+        uses: "ramsey/composer-install@v2"
+        env:
+          SYMFONY_REQUIRE: "${{ matrix.symfony-require }}"
+        with:
+          dependency-versions: "${{ matrix.dependencies }}"
+          composer-options: "${{ matrix.composer-options }}"
+
+      - name: "Run PHPUnit"
+        run: "vendor/bin/phpunit --coverage-text"

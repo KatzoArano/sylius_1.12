@@ -1,0 +1,3 @@
+<?php //Sylius%255CBundle%255CCoreBundle%255CMessage%255CAdmin%255CAccount%255CRequestResetPasswordEmail%2523__construct
+
+return [PHP_INT_MAX, []];

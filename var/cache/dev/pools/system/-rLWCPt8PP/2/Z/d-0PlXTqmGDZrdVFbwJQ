@@ -1,0 +1,38 @@
+<?php //subresource_operations_c6ba6ac4fe4d99e5f16240344973fe41
+
+return [PHP_INT_MAX, [
+    'api_products_attributes_get_subresource' => [
+        'property' => 'attributes',
+        'collection' => true,
+        'resource_class' => 'App\\Entity\\Product\\ProductAttributeValue',
+        'shortNames' => [
+            'ProductAttributeValue',
+            'Product',
+        ],
+        'legacy_filters' => [],
+        'legacy_normalization_context' => [
+            'groups' => [
+                'shop:product_attribute_value:read',
+            ],
+        ],
+        'legacy_type' => null,
+        'identifiers' => [
+            'code' => [
+                'App\\Entity\\Product\\Product',
+                'code',
+                true,
+            ],
+        ],
+        'operation_name' => 'attributes_get_subresource',
+        'route_name' => 'api_products_attributes_get_subresource',
+        'path' => '/shop/products/{code}/attributes',
+        'defaults' => [],
+        'requirements' => [],
+        'options' => [],
+        'host' => '',
+        'schemes' => [],
+        'condition' => '',
+        'controller' => null,
+        'stateless' => null,
+    ],
+]];

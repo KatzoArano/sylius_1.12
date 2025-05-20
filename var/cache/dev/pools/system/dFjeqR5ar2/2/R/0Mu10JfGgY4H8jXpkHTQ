@@ -1,0 +1,88 @@
+<?php //resource_metadata_6bc7f17242e84fda643fa907b79ef109
+
+return [PHP_INT_MAX, static fn () => \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['ApiPlatform\\Core\\Metadata\\Resource\\ResourceMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Metadata\\Resource\\ResourceMetadata')),
+    ],
+    null,
+    [
+        'ApiPlatform\\Core\\Metadata\\Resource\\ResourceMetadata' => [
+            'shortName' => [
+                'RequestContact',
+            ],
+            'description' => [
+                'experimental',
+            ],
+            'itemOperations' => [
+                [],
+            ],
+            'collectionOperations' => [
+                [
+                    'shop_send_contact_request' => [
+                        'method' => 'POST',
+                        'path' => '/contact-requests',
+                        'input' => [
+                            'class' => 'Sylius\\Bundle\\ApiBundle\\Command\\SendContactRequest',
+                            'name' => 'SendContactRequest',
+                        ],
+                        'status' => 202,
+                        'denormalization_context' => [
+                            'groups' => 'shop:contact_request:create',
+                        ],
+                        'openapi_context' => [
+                            'summary' => 'Send contact request',
+                        ],
+                        'output' => [
+                            'class' => null,
+                        ],
+                        'stateless' => null,
+                        'input_formats' => [
+                            'jsonld' => [
+                                'application/ld+json',
+                            ],
+                            'json' => [
+                                'application/json',
+                            ],
+                            'html' => [
+                                'text/html',
+                            ],
+                        ],
+                        'output_formats' => [
+                            'jsonld' => [
+                                'application/ld+json',
+                            ],
+                            'json' => [
+                                'application/json',
+                            ],
+                            'html' => [
+                                'text/html',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'graphql' => [
+                [
+                    'item_query' => [],
+                    'collection_query' => [],
+                    'delete' => [],
+                    'update' => [],
+                    'create' => [],
+                ],
+            ],
+            'attributes' => [
+                [
+                    'route_prefix' => 'shop',
+                    'messenger' => 'input',
+                    'validation_groups' => 'sylius',
+                    'output' => [
+                        'class' => null,
+                    ],
+                    'input' => null,
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+)];

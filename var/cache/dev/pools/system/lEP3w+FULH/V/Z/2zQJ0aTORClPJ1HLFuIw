@@ -1,0 +1,3 @@
+<?php //Sylius%255CBundle%255CCoreBundle%255CCatalogPromotion%255CCommand%255CApplyCatalogPromotionsOnVariants
+
+return [PHP_INT_MAX, []];
